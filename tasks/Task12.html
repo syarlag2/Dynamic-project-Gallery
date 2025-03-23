@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f4f8;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 300px;
+            border: 1px solid #ddd;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 10px 0;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Info</h2>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="number" id="age" placeholder="Enter Age">
+        <input type="text" id="profession" placeholder="Enter Profession">
+        <input type="text" id="contact" placeholder="Enter Contact">
+        <button onclick="insertInfo()">Insert Info</button>
+        <button onclick="showInfo()">Show Info</button>
+        <p id="output"></p>
+    </div>
+    <script>
+        let userInfo = { name: "", age: "", profession: "", contact: "" };
+        function insertInfo() {
+            userInfo.name = document.getElementById("name").value;
+            userInfo.age = document.getElementById("age").value;
+            userInfo.profession = document.getElementById("profession").value;
+            userInfo.contact = document.getElementById("contact").value;
+        }
+        function showInfo() {
+            if (userInfo.name || userInfo.age || userInfo.profession || userInfo.contact) {
+                document.getElementById("output").innerText = `Name: ${userInfo.name}, Age: ${userInfo.age}, Profession: ${userInfo.profession}, Contact: ${userInfo.contact}`;
+            } else {
+                document.getElementById("output").innerText = "No information inserted.";
+            }
+        }
+    </script>
+</body>
+</html>

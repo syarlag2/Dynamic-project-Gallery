@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Letter Hover Effect</title>
+  <style>
+    /* Page Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: white;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+    }
+
+    /* Text Container */
+    .interactive-text {
+      display: flex;
+      gap: 25px;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    /* Google Logo Colors */
+    .blue { color: #4285F4; }
+    .red { color: #EA4335; }
+    .yellow { color: #FBBC05; }
+    .green { color: #34A853; }
+    .orange { color: #FF9900; }
+
+    /* Letter Styling */
+    .interactive-text span {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Hover Effect: Ash Background & Enlarge */
+    .interactive-text span:hover {
+      transform: scale(1.5);
+      background-color: rgba(192, 192, 192, 0.8); /* Ash color background */
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="interactive-text">
+    <span class="blue">G</span>
+    <span class="red">o</span>
+    <span class="yellow">o</span>
+    <span class="blue">g</span>
+    <span class="green">l</span>
+    <span class="orange">e</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Form</title>
+   
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4; 
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #ffffff; 
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 380px;
+            border: 1px solid #ddd; 
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 12px;
+            margin: 12px 0;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ccc; 
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border 0.3s ease;
+        }
+        input:focus {
+            border-color: #aaa; 
+            outline: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f1f1; 
+            color: #333;
+        }
+        td {
+            background-color: #fafafa; 
+        }
+        button {
+            padding: 12px 18px;
+            margin: 10px;
+            width: 140px;
+            border: none;
+            border-radius: 8px;
+            background-color: #bdc3c7; 
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            font-family: 'Poppins', sans-serif;
+        }
+        button:hover {
+            background-color: #95a5a6; 
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #7f8c8d; 
+            transform: translateY(2px);
+        }
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .search-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-container input {
+            width: 80%;
+        }
+        .search-container button {
+            width: 18%;
+            background-color: #bdc3c7; 
+        }
+        .search-container button:hover {
+            background-color: #95a5a6; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Information</h2>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="number" id="age" placeholder="Enter Age">
+        <input type="text" id="profession" placeholder="Enter Profession">
+        <input type="text" id="contact" placeholder="Enter Contact">
+
+        <div class="button-group">
+            <button onclick="insertInfo()">Insert Info</button>
+            <button onclick="clearInput()">Clear Input</button>
+            <button onclick="clearOutput()">Clear Output</button>
+            <button onclick="showAllData()">Show All Data</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by Name or Profession" onkeyup="searchData()">
+            <button onclick="searchData()">Search</button>
+        </div>
+
+        <p id="output"></p>
+    </div>
+
+    <script>
+        let userInfo = { name: "", age: "", profession: "", contact: "" };
+
+        function insertInfo() {
+            userInfo.name = document.getElementById("name").value;
+            userInfo.age = document.getElementById("age").value;
+            userInfo.profession = document.getElementById("profession").value;
+            userInfo.contact = document.getElementById("contact").value;
+            document.getElementById("output").innerText = "Data inserted successfully!";
+        }
+
+        function clearInput() {
+            document.getElementById("name").value = '';
+            document.getElementById("age").value = '';
+            document.getElementById("profession").value = '';
+            document.getElementById("contact").value = '';
+            document.getElementById("output").innerText = "Input cleared!";
+        }
+
+        function clearOutput() {
+            document.getElementById("output").innerText = '';
+        }
+
+        function showAllData() {
+            if (userInfo.name || userInfo.age || userInfo.profession || userInfo.contact) {
+                document.getElementById("output").innerText = `Name: ${userInfo.name}, Age: ${userInfo.age}, Profession: ${userInfo.profession}, Contact: ${userInfo.contact}`;
+            } else {
+                document.getElementById("output").innerText = "No information inserted.";
+            }
+        }
+
+        function searchData() {
+            let query = document.getElementById("search").value.toLowerCase();
+            let result = '';
+            
+            if (query) {
+                if (userInfo.name.toLowerCase().includes(query) || userInfo.profession.toLowerCase().includes(query)) {
+                    result = `Search result: Name: ${userInfo.name}, Age: ${userInfo.age}, Profession: ${userInfo.profession}, Contact: ${userInfo.contact}`;
+                } else {
+                    result = "No matching data found.";
+                }
+            } else {
+                result = "Enter a search term.";
+            }
+            
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+</body>
+</html>

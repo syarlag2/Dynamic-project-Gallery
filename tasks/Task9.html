@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grade Calculator</title>
+</head>
+
+<body style="text-align: center; font-family: Arial;">
+    <h3>Grade Calculator</h3>
+    <input id="score" type="number" placeholder="Enter score" oninput="calcGrade()">
+    <p>Your grade is: <span id="grade">F</span></p>
+
+    <script>
+        function calcGrade()
+        {
+            let s = document.getElementById("score").value;
+            document.getElementById("grade").textContent = s >= 80 ? "A" : s >= 60 ? "B" : s >= 40 ? "C" : "F";
+        }
+    </script>
+
+</body>
+</html>

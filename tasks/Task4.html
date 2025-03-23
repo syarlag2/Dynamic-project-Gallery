@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter Username">
+    <button onclick="welcomeUser()">Enter</button>
+    <p id="message"></p>
+
+    <script>
+        function welcomeUser() {
+            let user = document.getElementById("username").value;
+            document.getElementById("message").innerText = "Welcome JS " + user;
+        }
+    </script>
+</body>
+</html>

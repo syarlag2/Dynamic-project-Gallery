@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Call Stack</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    input {
+      padding: 5px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .container {
+      text-align: center;
+    }
+    #taskList {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+    #process {
+      font-style: italic;
+      margin-top: 10px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Task Call Stack</h2>
+    <input type="text" id="taskInput" placeholder="Enter Task" />
+    <button onclick="addTask()">Add Task</button>
+    <button onclick="undoTask()">Undo Task</button>
+    
+    <p id="process">process: (empty)</p>
+    <div id="taskList"></div>
+  </div>
+
+  <script>
+    let taskStack = [];
+
+    function addTask() {
+      let task = document.getElementById('taskInput').value;
+      if (task) {
+        taskStack.push(task);
+        document.getElementById('taskInput').value = '';
+        updateTaskList();
+      }
+    }
+
+    function undoTask() {
+      if (taskStack.length > 0) {
+        taskStack.pop();
+        updateTaskList();
+      }
+    }
+
+    function updateTaskList() {
+      const taskList = document.getElementById('taskList');
+      const process = document.getElementById('process');
+
+      taskList.innerText = taskStack.join(' → ');
+      process.innerText = taskStack.length > 0
+        ? `process: ${taskStack[taskStack.length - 1]}`
+        : 'process: (empty)';
+    }
+  </script>
+</body>
+</html>

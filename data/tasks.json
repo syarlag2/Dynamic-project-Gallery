@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Expectation Document",
+    "file": "tasks/Task1.html",
+    "question": "Write an essay on your expectations from this course."
+  },
+  {
+    "id": 2,
+    "title": "Basic HTML Styling",
+    "file": "tasks/Task2.html",
+    "question": "Write the HTML and CSS code to render two static HTML pages with functional buttons."
+  },
+  {
+    "id": 3,
+    "title": "CSS Hover Effects",
+    "file": "tasks/Task3.html",
+    "question": "Write the HTML and CSS code to render a page similar to the one shown in class with the necessary Hover effects."
+  },
+  {
+    "id": 4,
+    "title": "Welcome to JS",
+    "file": "tasks/Task4.html",
+    "question": "Create an HTML page to capture Username and welcome the user on button click."
+  },
+  {
+    "id": 5,
+    "title": "Calculator with JS",
+    "file": "tasks/Task5.html",
+    "question": "Write JavaScript code to make the calculator functional."
+  },
+  {
+    "id": 6,
+    "title": "GitHub Integration",
+    "file": "tasks/Task6.html",
+    "question": "Follow GitHub workflow steps and submit repo URL and commit ID."
+  },
+  {
+    "id": 7,
+    "title": "Console Output",
+    "file": "tasks/Task7.html",
+    "question": "Write JS code to demonstrate 5 arithmetic and 5 assignment operations with console output."
+  },
+  {
+    "id": 8,
+    "title": "String Operations",
+    "file": "tasks/Task8.html",
+    "question": "Text input should convert entered string to uppercase in output field using JS."
+  },
+  {
+    "id": 9,
+    "title": "Grade Calculator",
+    "file": "tasks/Task9.html",
+    "question": "Design a grade calculator using HTML, CSS, and JavaScript."
+  },
+  {
+    "id": 10,
+    "title": "Call Stack Implementation",
+    "file": "tasks/Task10.html",
+    "question": "Implement a call stack using an array with add/undo task functionality."
+  },
+  {
+    "id": 11,
+    "title": "Class Work - Loops",
+    "file": "tasks/Task11.html",
+    "question": "Submit the codes that you have written throughout today's class."
+  },
+  {
+    "id": 12,
+    "title": "Class Work - Forms",
+    "file": "tasks/Task12.html",
+    "question": "Submit the codes that you have written throughout today's class."
+  },
+  {
+    "id": 13,
+    "title": "Class Work - Objects",
+    "file": "tasks/Task13.html",
+    "question": "Submit the codes that you have written throughout today's class."
+  },
+  {
+    "id": 14,
+    "title": "Random Value Generator",
+    "file": "tasks/Task14.html",
+    "question": "Submit the codes that you have written throughout today's class."
+  },
+  {
+    "id": 15,
+    "title": "Age Calculator",
+    "file": "tasks/Task15.html",
+    "question": "Submit the code files that you have written throughout the class."
+  },
+  {
+    "id": 16,
+    "title": "Class Work - JSON",
+    "file": "tasks/Task16.html",
+    "question": "Submit your deployed GitHub Pages URL and repository link."
+  }
+]
